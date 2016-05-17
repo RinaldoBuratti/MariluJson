@@ -7,24 +7,14 @@ import org.json.simple.parser.JSONParser;
 
 public class DataGetter {
 	
-	public static void main(String[] args) {
-		String [] arr = null;
-
-			arr = getLinks("www.ebay.com","5001-Jewellery Design");
-			for(String s: arr) {
-				System.out.println(s);
-			}
-
-	}
-	
 	/*Restituisce i link puliti in formato stringa */
-	public static String[] getLinks(String site, String resource) {
+	public static String[] getLinks(String site, String resource, String path) {
 		JSONParser parser = new JSONParser();
 		JSONObject middle = null;
 		String[] arr = null;
 		
 		try {
-			Object obj = parser.parse(new FileReader("prova.json"));
+			Object obj = parser.parse(new FileReader(path));
 			JSONObject json = (JSONObject) obj;
 			middle = (JSONObject) json.get(site);
 			//JSONObject res = middle.get(resource);
