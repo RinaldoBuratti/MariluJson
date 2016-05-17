@@ -14,28 +14,17 @@ public class DataSetter {
 		
 	}
 
-	public void getDataFromInput() {
-		Scanner reader = new Scanner(System.in);
-		
+	public void getDataFromInput(Scanner reader) {
+		reader.nextLine();
 		System.out.println("Scrivi il nome del sito: ");
 		this.setSite(reader.nextLine());
-		
-		System.out.println("Scrivi il nome del prodotto: ");
-		this.setProduct(reader.nextLine());
 		
 		System.out.println("Scrivi il nome della risorsa: ");
 		this.setResource(reader.nextLine());
 		
-		System.out.println("Scrivi il nome dell'attributo: ");
-		this.setAttribute_name(reader.nextLine());
-		
 		System.out.println("Scrivi la regola: ");
 		this.setRule(reader.nextLine());
-			
-		System.out.println("L'identificatore fa riferimento al prodotto? (digita true o false): ");
-		this.setPage_id(reader.nextLine());
 		
-		reader.close();
 	}
 	
 	
